@@ -1,0 +1,25 @@
+.square {
+    background-color: rgb(77, 230, 77);
+    border: solid rgb(30, 82, 30) 1px;
+}
+
+#campoMinato {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+}
+
+.facile {
+    width: 13%;
+    height: 13%;
+}
+
+.medio {
+    width: 11%;
+    height: 11%;
+}
+
+.difficile {
+    width: 10%;
+    height: 10%;
+}
