@@ -1,6 +1,10 @@
-function createSquares(number, className) { /* funzione per creare un numero di quadrati */
-    let list = [];
-    generateRandomNumber(0, number, list);
+function createSquares(number, className) { // funzione per creare un numero di quadrati
+    let list = []; //array 16 numeri randomici
+    for (let i = 0; i < 16; i++) {
+        generateRandomNumber(0, number, list);
+        console.log(list);
+    }
+
     let squares = []; /* array che contine i div */
     for (let i = 0; i < number; i++) { /* ciclo che si ripete un number (argomento) di volte */
         let square = document.createElement("div");  /* variabili che contiene i div */
