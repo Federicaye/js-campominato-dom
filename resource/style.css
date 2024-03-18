@@ -23,3 +23,8 @@
     width: calc(100%/7);
     height: calc(100%/7);
 }
+
+.red {
+    background-color: red;
+    border: solid rgb(143, 5, 5) 1px;
+}

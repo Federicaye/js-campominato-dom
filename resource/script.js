@@ -5,7 +5,7 @@ function createSquares(number, className) {
 
     /* ciclo for che ripete la funzine generateRandomNumber per 16 volte */
     for (let i = 0; i < 16; i++) {
-        generateRandomNumber(1, 60, list);
+        generateRandomNumber(1, 70, list); //non posso mettere come argomento il parametro number della funzione createSquare
     }
     console.log(list);
 
@@ -24,9 +24,18 @@ function createSquares(number, className) {
         } else {
             content.textContent = "fiore"
         }
+
+       
         square.addEventListener("click", function () {
             content.classList.remove("d-none")
-            console.log(square.id);
+            /* console.log(square.id); */
+            if (content.textContent === "bomba"){
+                console.log("sei morto");
+                document.getElementById("message").innerHTML = "hai perso";
+                square.classList.remove("square");
+                square.classList.add("red");
+            }
+
         });
         squares.push(square);
     }
