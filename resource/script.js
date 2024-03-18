@@ -1,17 +1,19 @@
 //funzione per creare un numero di quadrati
 function createSquares(number, className) {
-    let squares = []; /* array che contine i div */
-    let list= []; 
+    let squares = [];
+    let list = [];
+
+    /* ciclo for che ripete la funzine generateRandomNumber per 16 volte */
     for (let i = 0; i < 16; i++) {
         generateRandomNumber(1, 60, list);
     }
-    console.log(list); 
-    for (let i = 0; i < number; i++) { /* ciclo che si ripete un number (argomento) di volte */
-        let square = document.createElement("div");  /* variabili che contiene i div */
-        /* let randomContent = Math.random() < 0.8 ? "fiore" : "bomba"; */
-        /* square.innerHTML = `<span> ${randomContent}</span>`; */
-        let content = document.createElement("span"); /* variabile che contiene gli span */
-        /* content.textContent = randomContent; */
+    console.log(list);
+
+    /* ciclo che crea i quadrati */
+    for (let i = 0; i < number; i++) {
+        let square = document.createElement("div");
+        let content = document.createElement("span");
+
         square.appendChild(content);
         square.classList.add("square");
         square.classList.add(className);
@@ -19,6 +21,8 @@ function createSquares(number, className) {
         content.classList.add("d-none");
         if (list.includes(i)) {
             content.textContent = "bomba";
+        } else {
+            content.textContent = "fiore"
         }
         square.addEventListener("click", function () {
             content.classList.remove("d-none")
@@ -27,8 +31,8 @@ function createSquares(number, className) {
         squares.push(square);
     }
 
-    return squares; 
-  
+    return squares;
+
 }
 
 
