@@ -25,18 +25,21 @@ function createSquares(number, className) {
             content.textContent = "fiore"
         }
 
-       
+        let score = 0;
         square.addEventListener("click", function () {
             content.classList.remove("d-none")
             /* console.log(square.id); */
-            if (content.textContent === "bomba"){
-                console.log("sei morto");
+            if (content.textContent === "bomba") {
+                console.log("game over");
                 document.getElementById("message").innerHTML = "hai perso";
                 square.classList.remove("square");
                 square.classList.add("red");
+            } else {
+                score += 10;
+                console.log (score);
             }
+        })
 
-        });
         squares.push(square);
     }
 
