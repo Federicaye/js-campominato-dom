@@ -31,14 +31,14 @@ const play = document.getElementById("play"); /* prendo oggetto "play" */
 play.addEventListener("click", function () {
     let squares = [];
     if (difficulty.value === "difficoltà1") {
-        squares = createSquares(49, "facile");
+        squares = createSquares(100, "facile");
         console.log(squares);
 
     } else if (difficulty.value === "difficoltà2") {
         squares = createSquares(81, "medio");
         console.log(squares);
     } else if (difficulty.value === "difficoltà3") {
-        squares = createSquares(100, "difficile");
+        squares = createSquares(49, "difficile");
         console.log(squares);
     }
     campoMinato.innerHTML = "";
@@ -50,3 +50,41 @@ play.addEventListener("click", function () {
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+/* 
+function generateRandomNumber(min, max, lista) {
+    let check = false;
+    let number;
+    do {
+        number = getRndInteger(min, max);
+
+        if (!lista.includes(number)) {
+            lista.push(number);
+            check = true;
+        }
+    } while (!check)
+    return number;
+} */
+
+function generateRandomNumber(min, max, lista) {
+    let check = false;
+    let number;
+    while (!check) {
+        number = getRndInteger(min, max);
+
+        if (!lista.includes(number)) {
+            lista.push(number);
+            check = true;
+        }
+    }
+    return number;
+}
+
+let list = [];
+generateRandomNumber (3,9, list);
+console.log(list);
+
+for (let i=0; i<5; i++){
+    generateRandomNumber(1,100,list)
+}
+
+console.log(list);

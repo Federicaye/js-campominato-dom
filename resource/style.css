@@ -10,16 +10,16 @@
 }
 
 .facile {
-    width: 13%;
-    height: 13%;
+    width: calc(100%/10);
+    height: calc(100%/10);
 }
 
 .medio {
-    width: 11%;
-    height: 11%;
+    width: calc(100%/9);
+    height: calc(100%/9);
 }
 
 .difficile {
-    width: 10%;
-    height: 10%;
+    width: calc(100%/7);
+    height: calc(100%/7);
 }
